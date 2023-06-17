@@ -31,7 +31,6 @@ func (r *Repository) AddNewPost(ctx context.Context, userLogin, header, content 
 }
 
 func (r *Repository) GetNPosts(ctx context.Context, page int) (posts []Post, err error) {
-	// TODO некорректный запрос, не может вывести оставшиеся записи
 	row, err := r.pool.Query(ctx, db.QueryGetNPosts, page)
 	if err != nil {
 		return
